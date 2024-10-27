@@ -140,9 +140,6 @@ Ngày sửa: 27/10/2024
     font-weight: bolder;
 }
 
-.content {
-    min-height: 300px;
-}
 
 .menu-content {
     width: 30%;
@@ -170,7 +167,8 @@ Ngày sửa: 27/10/2024
 }
 
 .main-content {
-    width: 70%;
+    width: 80%;
+    margin: auto;
 }
 
 

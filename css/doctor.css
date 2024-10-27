@@ -1,0 +1,126 @@
+* {
+    --textPrimary: #27519e;
+    --white: #fff;
+    --secondColor: #333;
+    --bgColor: #f0f9fd;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.moduleContent {
+    width: 100%;
+
+}
+.moduleContent .content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 30px;
+    color: var(--textPrimary);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.moduleContent em {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 20px;
+}
+.moduleContent em span {
+    display: block;
+    height: 1px;
+    width: 40px;
+    background-color: #79c5e8;
+    margin-right: 20px;
+}
+.moduleContent em span + span {
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+/* Category */
+.doctorContent {
+    width: 80%;
+    display: flex;
+    margin: auto;
+}
+.category {
+    width: 20%;
+}
+.categoryHeading {
+    padding: 20px 0;
+    background-color: var(--textPrimary);
+    color: var(--white);
+    text-align: center;
+}
+.categoryList {
+    padding: 20px;
+    background-color: var(--bgColor);
+}
+.categoryLink {
+    display: block;
+    margin-bottom: 20px;
+    color: var(--secondColor);
+    font-size: 16px;
+    font-weight: 400;
+}
+.categoryLink.active, .categoryLink:hover {
+    color: var(--textPrimary);
+    font-weight: 700;
+}
+
+.doctorContent {
+    margin-top: 20px;
+}
+
+.doctorContent .content {
+    width: 80%;
+    padding: 0 30px; 
+}
+.doctorContent .title {
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+.doctorCard {
+    display: flex;
+    margin-bottom: 32px;
+    background-color: var(--bgColor);
+}
+
+.doctorImg img {
+    height: 350px;
+    width: 285px;
+}
+.doctorWrap {
+    padding: 30px;
+}
+.doctorWrap .name {
+    font-size: 20px;
+    color: var(--textPrimary);
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.briefContent p {
+    margin: 10px 0;
+    color: var(--secondColor);
+}
+.bottomBtn {
+    font-size: 12px;
+    text-transform: uppercase;
+    display: block;
+    border: none;
+    background-color: var(--textPrimary);
+    color: var(--white);
+    margin-top: 100px;
+    padding: 14px 28px;
+    border-radius: 5px;
+    cursor: pointer;
+}
