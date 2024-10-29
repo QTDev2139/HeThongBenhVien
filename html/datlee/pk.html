@@ -1,12 +1,3 @@
-<!-- 
-Họ tên: Đoàn Hửu Nhuận, MSSV: 21062781, Nội dung code trang index(Header, nav), Dùng làm khung cho các trang khác;
-Ngày sửa: 27/10/2024
-
-Họ tên: Lê Thành Đạt, MSSV: 21063121, Nội dung code trang index(Footer)
-Ngày sửa: 27/10/2024
-
--->
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +9,36 @@ Ngày sửa: 27/10/2024
     <link rel="shortcut icon" type="image/png" href="../../upload/image/homepage/logo-min.png" />
     <link rel="stylesheet" href="../../css/layout/style.css">
     <link rel="stylesheet" href="../../fontawesome-free-6.4.2-web/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header_TT {
+            background-color: #e0e0e0;
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 5px;
+            width: 250px;
+            margin: 20px auto;
+
+        }
+        .container_TT table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        .container_TT th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+             
+        }
+        .container_TT th {
+            background-color: #f2f2f2;
+        }
+        
+    </style>
 </head>
 
 <body>
@@ -37,9 +58,9 @@ Ngày sửa: 27/10/2024
                         </form>
                     </div>
                     <div class="nav-contact">
-                        <button class="btn-dkk" onclick="location.href='../datlee/dk.html'">ĐĂNG KÝ KHÁM</button>
+                        <button class="btn-dkk">ĐĂNG KÝ KHÁM</button>
                         <button class="btn-tv">TƯ VẤN: 1800 0000</button>
-                        <a href="../datlee/dn.html"><button class="btn-signin"><i class="fa-solid fa-user fa-2xl"></i></button></a>
+                        <a href="#"><button class="btn-signin"><i class="fa-solid fa-user fa-2xl"></i></button></a>
                     </div>
                 </div>
                 <div class="nav-bottom">
@@ -53,28 +74,37 @@ Ngày sửa: 27/10/2024
             </div>
         </div>
         <div class="content">
-            <div class="menu-content">
-                <h3>Chức năng</h3>
-                <ul>
-                    <li><a href="#" onclick="openModal()">Xem Phiếu</a></li>
-                    <li><a href="#">Chức năng 2</a></li>
-                    <li><a href="#">Chức năng 3</a></li>
-                    <li><a href="#">Chức năng 4</a></li>
-                    <!-- model xemphieu -->
-                    <div id="myModal" class="modal">
-                        <div class="modal-content">
-                            <span class="close" onclick="closeModal()">&times;</span>
-                            <h2></h2>
-                            <button onclick="location.href='../datlee/pdkk.html'">Xem phiếu đăng ký khám</button>
-                            <button onclick="location.href='../datlee/pk.html'">Xem phiếu khám</button>
-                        </div>
-                    </div>
-                </ul>
-                
-            </div>
             
             <div class="main-content">
-
+                <div class="container_TT">
+                    <div class="header_TT">Phiếu khám bệnh</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th style="text-align: left;">Tên phiếu</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td style="text-align: left;">Mã: 113, Bệnh: Ho, Ngày: 10/10/2023</td>
+                                <td><a href="ctpk.html">Chi tiết</a></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td style="text-align: left;">Mã: 112, Bệnh: Sổ mũi, Ngày: 09/10/2023</td>
+                                <td><a href="ctpk.html">Chi tiết</a></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td style="text-align: left;">Mã: 111, Bệnh: Sốt rét, Ngày: 07/10/2023</td>
+                                <td><a href="ctpk.html">Chi tiết</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <footer class="footer">
@@ -120,25 +150,6 @@ Ngày sửa: 27/10/2024
             </div>
         </footer>
     </div>
-    <script>
-        // Mở modal
-        function openModal() {
-            document.getElementById('myModal').style.display = "block";
-        }
-
-        // Đóng modal
-        function closeModal() {
-            document.getElementById('myModal').style.display = "none";
-        }
-
-        // Đóng modal khi nhấn ra ngoài
-        window.onclick = function(event) {
-            const modal = document.getElementById('myModal');
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 </body>
 
 </html>

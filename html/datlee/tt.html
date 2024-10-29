@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin Đăng ký Khám bệnh</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="body">
+        <div class="container_header">
+            <a href="../layout/index.html">
+                <img src="../../upload/image/homepage/logo-min.png" alt="Logo" class="logo">
+            </a>
+        </div>
+        <div class="container_TT">
+            <div class="yasuo">
+                <h2>Thông tin Đăng ký Khám bệnh</h2>
+            </div>
+            <div id="info"></div>
+            <div class="red">
+                <h3>Số tiền cần thanh toán: 1.000.000 VND</h3>
+            </div>
+            <div class="att">
+                <a href="dk.html">Trở về</a>
+            </div>
+    
+            <div class="button-container">
+                <button type="submit" class="button">Thanh Toán</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        function displayInfo() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const infoDiv = document.getElementById('info');
+
+            urlParams.forEach((value, key) => {
+                const infoGroup = document.createElement('div');
+                infoGroup.classList.add('info-group');
+                infoGroup.innerHTML = `<label>${key}:</label> ${value}`;
+                infoDiv.appendChild(infoGroup);
+            });
+        }
+        
+        displayInfo();
+    </script>
+</body>
+</html>

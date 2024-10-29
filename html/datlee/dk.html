@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký khám bệnh</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="body">
+        <div class="container_header">
+            <a href="../layout/index.html">
+                <img src="../../upload/image/homepage/logo-min.png" alt="Logo" class="logo">
+            </a>
+        </div>
+        <div class="container">
+            <div class="blue">
+                <div class="yasuo">
+                    <h1 >Đăng ký khám bệnh</h1>
+                </div>
+                <form id="registration-form" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label for="sdt">SDT</label>
+                        <input type="text" id="sdt" name="SDT" value="0787750973">
+                    </div>
+                    <span class="error" id="error-sdt">SDT phải theo dạng 07 hoặc 03 xxxxxxxx.</span>
+                    <div class="button-container">
+                        <button type="button" class="button" onclick="validateAndEnableSection('sdt', 'personal-info-section')">Tiếp tục</button>
+                    </div>
+    
+                    <div id="personal-info-section" class="hidden">
+                        <div class="form-group">
+                            <label for="ten">Tên</label>
+                            <input type="text" id="ten" name="Tên" disabled>
+                        </div>
+                        <span class="error" id="error-ten">Tên phải là dạng chữ.</span>
+    
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="Email" disabled>
+                        </div>
+                        <span class="error" id="error-email">Email phải có dạng @gmail.com.</span>
+    
+                        <div class="form-group">
+                            <label for="ngaysinh">Ngày sinh</label>
+                            <input type="date" id="ngaysinh" name="Ngày Sinh" disabled>
+                        </div>
+                        <span class="error" id="error-ngaysinh">Vui lòng nhập ngày sinh.</span>
+    
+                        <div class="form-group">
+                            <label for="gioitinh">Giới tính</label>
+                            <select id="gioitinh" name="Giới tính" disabled>
+                                <option value="">Chọn giới tính</option>
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
+                                <option value="Khác">Khác</option>
+                            </select>
+                        </div>
+                        <span class="error" id="error-gioitinh">Vui lòng chọn giới tính.</span>
+    
+                        <div class="form-group">
+                            <label for="cccd">CCCD</label>
+                            <input type="text" id="cccd" name="CCCD" disabled>
+                        </div>
+                        <span class="error" id="error-cccd">CCCD phải là số.</span>
+    
+                        <div class="form-group">
+                            <label for="bhyt">BHYT</label>
+                            <input type="text" id="bhyt" name="BHYT" value="0" disabled>
+                        </div>
+                        <span class="error" id="error-bhyt">BHYT phải là số.</span>
+    
+                        <div class="button-container">
+                            <button type="button" class="button" onclick="validateAndEnableSection('personal-info-section', 'appointment-info-section')">Tiếp tục</button>
+                        </div>
+                    </div>
+    
+                    <div id="appointment-info-section" class="hidden">
+                        <div class="form-group">
+                            <label for="chuyenkhoa">Chuyên khoa</label>
+                            <select id="chuyenkhoa" name="Chuyên khoa" disabled>
+                                <option value="">Chọn chuyên khoa</option>
+                                <option value="Tai Mũi Họng">Tai Mũi Họng</option>
+                            </select>
+                        </div>
+                        <span class="error" id="error-chuyenkhoa">Vui lòng chọn chuyên khoa.</span>
+    
+                        <div class="form-group">
+                            <label for="bacsi">Bác sĩ</label>
+                            <select id="bacsi" name="Bác sĩ" disabled>
+                                <option value="">Chọn bác sĩ</option>
+                                <option value="Lê Thành Đạt">Lê Thành Đạt</option>
+                            </select>
+                        </div>
+                        <span class="error" id="error-bacsi">Vui lòng chọn bác sĩ.</span>
+    
+                        <div class="form-group">
+                            <label for="ngaykham">Ngày khám</label>
+                            <select id="ngaykham" name="Ngày Khám" disabled>
+                                <option value="">Chọn ngày khám</option>
+                                <option value="30/11/2024">30/11/2024</option>
+                            </select>
+                        </div>
+                        <span class="error" id="error-ngaykham">Vui lòng chọn ngày khám.</span>
+    
+                        <div class="button-container">
+                            <button type="submit" class="button">Đăng ký</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function validateAndEnableSection(currentSectionId, nextSectionId) {
+            const inputs = document.querySelectorAll(`#${currentSectionId} input, #${currentSectionId} select`);
+            let allValid = true;
+
+            inputs.forEach(input => {
+                const errorMessage = document.getElementById(`error-${input.id}`);
+                if (input.id === "sdt") {
+                    const sdtPattern = /^(03|07)\d{8}$/; 
+                    if (!sdtPattern.test(input.value.trim())) {
+                        errorMessage.style.display = "block";
+                        allValid = false;
+                    } else {
+                        errorMessage.style.display = "none";
+                    }
+                } else if (input.id === "ten") {
+                    const namePattern = /^[a-zA-Z\s]+$/; 
+                    if (!namePattern.test(input.value.trim())) {
+                        errorMessage.style.display = "block";
+                        allValid = false;
+                    } else {
+                        errorMessage.style.display = "none";
+                    }
+                } else if (input.id === "email") {
+                    if (!input.value.includes('@gmail.com')) {
+                        errorMessage.style.display = "block";
+                        allValid = false;
+                    } else {
+                        errorMessage.style.display = "none";
+                    }
+                } else if (input.id === "cccd" || input.id === "bhyt") {
+                    const numberPattern = /^\d+$/; 
+                    if (!numberPattern.test(input.value.trim())) {
+                        errorMessage.style.display = "block";
+                        allValid = false;
+                    } else {
+                        errorMessage.style.display = "none";
+                    }
+                } else if (input.value.trim() === "") {
+                    errorMessage.style.display = "block";
+                    allValid = false;
+                } else if (errorMessage) {
+                    errorMessage.style.display = "none";
+                }
+            });
+
+            if (allValid) {
+                const nextSection = document.getElementById(nextSectionId);
+                nextSection.classList.remove('hidden');
+                const nextInputs = nextSection.querySelectorAll('input, select');
+                nextInputs.forEach(input => input.disabled = false);
+            }
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            const personalInfoSection = document.getElementById('personal-info-section');
+            const appointmentInfoSection = document.getElementById('appointment-info-section');
+            
+            // Validate personal info
+            const personalInputs = personalInfoSection.querySelectorAll('input, select');
+            let personalValid = true;
+            personalInputs.forEach(input => {
+                const errorMessage = document.getElementById(`error-${input.id}`);
+                if (input.value.trim() === "" || errorMessage.style.display === "block") {
+                    personalValid = false;
+                }
+            });
+
+            // Validate appointment info
+            const appointmentInputs = appointmentInfoSection.querySelectorAll('input, select');
+            let appointmentValid = true;
+            appointmentInputs.forEach(input => {
+                const errorMessage = document.getElementById(`error-${input.id}`);
+                if (input.value.trim() === "" || errorMessage.style.display === "block") {
+                    appointmentValid = false;
+                }
+            });
+
+            if (personalValid && appointmentValid) {
+                const form = document.getElementById('registration-form');
+                const formData = new FormData(form);
+                const params = new URLSearchParams();
+
+                for (const [key, value] of formData.entries()) {
+                    params.append(key, value);
+                }
+
+                const targetUrl = `tt.html?${params.toString()}`;
+                window.location.href = targetUrl;
+            } else {
+                alert("Vui lòng điền đầy đủ thông tin và kiểm tra lại các trường.");
+            }
+        }
+    </script>
+</body>
+</html>
