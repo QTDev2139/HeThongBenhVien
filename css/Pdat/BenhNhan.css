@@ -1,0 +1,112 @@
+/* Style chung cho modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+.modal-content h2 {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Label và input field */
+.modal-content label {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="date"],
+.modal-content select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Đặt các cặp input ngang hàng */
+.modal-content .row {
+    display: flex;
+    gap: 20px;
+}
+
+.modal-content .row label,
+.modal-content .row input,
+.modal-content .row select {
+    flex: 1;
+}
+
+/* Căn chỉnh nút đóng */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Đặt form modal hiển thị nhãn và input cùng dòng */
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal form label {
+    flex: 0 0 150px; /* Đặt chiều rộng cố định cho nhãn */
+    margin-right: 10px;
+    text-align: right;
+}
+
+.modal form .form-group {
+    display: flex;
+    align-items: center;
+}
+
+.modal form input,
+.modal form select {
+    flex: 1;
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Dòng gộp cho các cặp trường (như Ngày Sinh và Giới Tính) */
+.modal form .row {
+    display: flex;
+    gap: 20px;
+}
+
+.modal form .row div {
+    flex: 1;
+}

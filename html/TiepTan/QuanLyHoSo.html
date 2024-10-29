@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bacsi/Dieiduong</title>
+    <link rel="stylesheet" href="../../css/Nhuan/Homepage.css">
+    <link rel="stylesheet" href="../../css/Pdat/QuanLyHoSo.css">
+    <link rel="stylesheet" href="../../fontawesome-free-6.4.2-web/css/all.min.css">
+    <link rel="shortcut icon" type="image/png" href="../../upload/image/homepage/logo-min.png" />
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="../../upload/image/homepage/logo.jpg" alt="">
+        </div>
+        <div class="nav-header">
+            <ul>
+                <li><a href="">
+                        <i class="fa-solid fa-house fa-lg"></i> Trang chủ
+                    </a></li>
+                <li><a href="">
+                        <i class="fa-regular fa-bell fa-lg"></i> Thông báo
+                    </a></li>
+                <li class="user-account"><a href="">
+                        <img src="../../upload/image/homepage-staff/avater-user.jpg" alt=""> Huỳnh Phát Dạt <i
+                            class="fa-solid fa-caret-down"></i>
+                    </a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header-table">
+            <h2>Quản lý hồ sơ bệnh nhân</h2>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm hồ sơ..." onkeyup="searchRecords()">
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã hồ sơ</th>
+                    <th>Mã bệnh nhân</th>
+                    <th>Tên bệnh nhân</th>
+                    <th>Chức năng</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HS-001</td>
+                    <td>BN-001</td>
+                    <td>Huỳnh Phát Đạt</td>
+                    <td>
+                        <button class="detail-btn" onclick="openModal()">Chi tiết</button>
+                        <button onclick="openEditModal()">Chỉnh sửa</button>
+                        <button onclick="confirmDelete()">Xóa</button>
+                    </td>
+                </tr>
+                <!-- Thêm các dòng khác tương tự -->
+            </tbody>
+        </table>
+        <div class="back-button">
+            <a href="HomePage.html" class="btn-back">Quay lại</a>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Thông tin hồ sơ</h2>
+            <form id="recordForm">
+                <div class="form-row">
+                    <label>Mã hồ sơ:</label>
+                    <input type="text" id="maHoSo" value="HS-001" readonly>
+                </div>
+                <div class="form-row">
+                    <label>Mã bệnh nhân:</label>
+                    <input type="text" id="maBenhNhan" value="BN-001" readonly>
+                </div>
+                <div class="form-row">
+                    <label>Họ tên bệnh nhân:</label>
+                    <input type="text" id="hoTenBenhNhan" value="Huỳnh Phát Đạt" readonly>
+                </div>
+                <div class="form-row">
+                    <label>CCCD:</label>
+                    <input type="text" id="cccd" value="077203xxxxxx" readonly>
+                </div>
+                <div class="form-row">
+                    <label>Email:</label>
+                    <input type="email" id="email" value="huynhdat247@gmail.com" readonly>
+                </div>
+                <div class="form-row">
+                    <label>Địa chỉ:</label>
+                    <input type="text" id="diaChi" value="496/21 đường Dương Quảng Hàm, phường 6, Quận Gò Vấp, TP. HCM" readonly>
+                </div>
+                <div class="form-row">
+                    <label>SĐT:</label>
+                    <input type="text" id="sdt" value="0902746236" readonly>
+                </div>
+                <div class="form-row">
+                    <label>Giới tính:</label>
+                    <input type="text" id="gioiTinh" value="Nam" readonly>
+                </div>
+                <div class="form-row">
+                    <label>Ngày sinh:</label>
+                    <input type="date" id="ngaySinh" value="2003-19-06" readonly>
+                </div>
+                <div class="form-row">
+                    <label>Dân tộc:</label>
+                    <input type="text" id="danToc" value="Kinh" readonly>
+                </div>
+                <div class="form-row">
+                    <label>Nghề nghiệp:</label>
+                    <input type="text" id="ngheNghiep" value="IT" readonly>
+                </div>
+                <div class="form-row">
+                    <label>Mã BHYT:</label>
+                    <input type="text" id="maBHYT" value="123456789" readonly>
+                </div>
+                <div class="form-row">
+                    <label>Mức BHYT:</label>
+                    <input type="text" id="mucBHYT" value="100%" readonly>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" onclick="closeModal()">Đóng</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+        <!-- Modal Chỉnh sửa -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2>Chỉnh sửa hồ sơ</h2>
+            <form id="editRecordForm">
+                <div class="form-row">
+                    <label>Mã hồ sơ:</label>
+                    <input type="text" id="editMaHoSo" value="HS-001" readonly>
+                </div>
+                <div class="form-row">
+                    <label>Mã bệnh nhân:</label>
+                    <input type="text" id="editMaBenhNhan" value="BN-001" readonly>
+                </div>
+                <div class="form-row">
+                    <label>Họ tên bệnh nhân:</label>
+                    <input type="text" id="editHoTenBenhNhan" value="Huỳnh Phát Đạt">
+                </div>
+                <div class="form-row">
+                    <label>CCCD:</label>
+                    <input type="text" id="editCCCD" value="077203xxxxxx">
+                </div>
+                <div class="form-row">
+                    <label>Email:</label>
+                    <input type="email" id="editEmail" value="huynhdat247@gmail.com">
+                </div>
+                <div class="form-row">
+                    <label>Địa chỉ:</label>
+                    <input type="text" id="editDiaChi" value="496/21 đường Dương Quảng Hàm, phường 6, Quận Gò Vấp, TP. HCM">
+                </div>
+                <div class="form-row">
+                    <label>SĐT:</label>
+                    <input type="text" id="editSDT" value="0902746236">
+                </div>
+                <div class="form-row">
+                    <label>Giới tính:</label>
+                    <input type="text" id="editGioiTinh" value="Nam">
+                </div>
+                <div class="form-row">
+                    <label>Ngày sinh:</label>
+                    <input type="date" id="editNgaySinh" value="2003-19-06">
+                </div>
+                <div class="form-row">
+                    <label>Dân tộc:</label>
+                    <input type="text" id="editDanToc" value="Kinh">
+                </div>
+                <div class="form-row">
+                    <label>Nghề nghiệp:</label>
+                    <input type="text" id="editNgheNghiep" value="IT">
+                </div>
+                <div class="form-row">
+                    <label>Mã BHYT:</label>
+                    <input type="text" id="editMaBHYT" value="123456789">
+                </div>
+                <div class="form-row">
+                    <label>Mức BHYT:</label>
+                    <input type="text" id="editMucBHYT" value="100%">
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" onclick="closeEditModal()">Đóng</button>
+                    <button type="button" class="btn-confirm" onclick="updateRecord()">Xác nhận</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('myModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+        
+        function openEditModal() {
+            document.getElementById("editModal").style.display = "block";
+        }
+
+        function closeEditModal() {
+            document.getElementById("editModal").style.display = "none";
+        }
+
+        function updateRecord() {
+            // Giả sử các thông tin được cập nhật hợp lệ
+            alert("Cập nhật thành công");
+            closeEditModal();
+            window.location.href = "HomePage.html"; // Chuyển hướng về HomePage.html
+        }
+
+        function confirmDelete() {
+            if (confirm("Xác nhận xóa bệnh nhân này?")) {
+                alert("Xóa thành công");
+                window.location.href = "HomePage.html"; // Chuyển hướng về HomePage.html
+            }
+        }
+
+        function searchRecords() {
+            const input = document.getElementById("searchInput");
+            const filter = input.value.toLowerCase();
+            const table = document.querySelector("table"); // Thay đổi để chọn bảng tương ứng
+            const rows = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < rows.length; i++) { // Bắt đầu từ 1 để bỏ qua tiêu đề
+                const cells = rows[i].getElementsByTagName("td");
+                let found = false;
+
+                for (let j = 0; j < cells.length; j++) {
+                    if (cells[j].innerText.toLowerCase().includes(filter)) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                rows[i].style.display = found ? "" : "none"; // Hiển thị hoặc ẩn hàng
+            }
+        }
+    </script>
+
+        <div class="footer">
+
+        </div>
+    </div>
+</body>
+
+</html>
