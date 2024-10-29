@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #d6ebf5;
+    /* box-sizing: border-box; */
+    /* font-family: 'Courier New', Courier, monospace; */
+}
+
+
+.container {
+    width: 90%;
+    /* border: 1px solid grey; */
+    margin: 10px auto;
+    height: 500px;
+}
+
+.header {
+    height: 80px;
+    padding: 0 5%;
+    background-color: white;
+    /* box-shadow: 10px 1px grey; */
+}
+
+.header .logo {
+    width: 60%;
+    float: left;
+    height: 80px;
+    background-color: white;
+}
+
+.header .logo a {
+    padding: 0;
+    margin: 0;
+}
+
+.header .logo img {
+    height: 80px;
+    width: auto;
+    margin: 0;
+    padding: 0;
+
+}
+
+.header .nav-header {
+    width: 40%;
+    float: right;
+    background-color: white;
+    height: 80px;
+}
+
+.header .nav-header ul {
+    clear: both;
+    height: 80px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
+.header .nav-header ul li {
+    display: inline;
+    background-color: white;
+    margin: 0 18px;
+    line-height: 80px;
+}
+
+.header .nav-header ul li a {
+    text-decoration: none;
+    color:  #007bff;
+    background-color: white;
+}
+
+.header .nav-header ul li a i {
+    background-color: white;
+}
+
+.user-account img{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.nav {
+    width: 20%;
+    float: left;
+    min-height: 100px;
+    /* background-color: white; */
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.nav ul li {
+    margin: 3px 0;
+    
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+    background-color: white;
+    display: block;
+    line-height: 50px;
+    height: 50px;
+    padding:  10px 20px;
+    /* border: 1px solid #007bff; */
+    border-radius: 20px;
+}
+
+.nav ul li a i {
+    margin-right: 15px;
+}
+
+.content {
+    width: 78%;
+    float: right;
+    background-color: white;
+    min-height: 500px;
+    margin: 2px 0 0 10px;
+}
+
+.content h2 {
+    text-align: center;
+    background-color: white;
+    height: 50px;
+    line-height: 50px;
+}
+
+.nav-schedule {
+    background-color: white;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+}
+
+.nav-schedule form {
+    background-color: white;
+}
+
+.nav-schedule form input {
+    margin-left: 15px;
+}
+
+.nav-schedule form input[type="radio"] {
+    transform: scale(1.3);
+}
+
+.nav-schedule form input[type="date"] {
+    height: 40px;
+    border: 1px solid grey;
+    padding: 0 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 120px;             
+    /* padding: 10px 15px;       */
+    font-size: 15px;           
+    color: #333;              
+    background-color: #f9f9f9; 
+    border: 1px solid #ccc;   
+    border-radius: 5px;       
+} 
+
+.nav-schedule form input[type="button"] {
+    height: 40px;
+    font-size: 15px;           
+    color: #333;       
+    padding: 0 10px;       
+    color: white;
+    border: 1px solid #8cc0f1;   
+    border-radius: 5px;   
+    background-color: #007bff;
+}
+
+.schedule {
+    background-color: white;
+}
+
+.schedule table {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.schedule table, .schedule tr, .schedule td{
+    background-color: white;
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+
+.schedule tr, .schedule tr td {
+    height: 60px;
+}
+
+.title-table-schedule, .schedule table tr td:first-child  {
+    text-align: center;
+    font-weight: bolder;
+}
+
+.title-table-schedule {
+    color: #007bff;
+}
+
+
+.shift-0, .shift-1 {
+    margin: 10px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    padding: 5px 15px;
+    box-sizing: border-box;
+    background-color: rgb(10, 221, 158);
+}
+
+.shift-1 ul {
+    list-style: none;
+}
+
+.shift-1,.shift-1 ul, .shift-1 ul li  {
+    background-color: rgb(49, 155, 241);
+}
+
+.shift-0 ul {
+    list-style: none;
+    background-color: rgb(10, 221, 158);
+}
+
+.shift-0 ul li{
+    background-color: rgb(10, 221, 158);
+}
+
+.shift-0 ul li:first-child, .shift-1 ul li:first-child {
+    font-weight: bolder;
+    text-align: center;
+}
+.shift-0 ul li:last-child, .shift-1 ul li:last-child {
+    text-align: center;
+    margin: 5px;
+}
+
+.shift-0 ul li:last-child button, .shift-1 ul li:last-child button {
+    width: 100px;
+    height: 30px;
+    border: 1px solid white;
+    color: white;
+    border-radius: 20px;
+    background-color: #007bff;
+}
+
+.shift-0 ul li:last-child button:hover, .shift-1 ul li:last-child button:hover {
+    border: 1px solid #007bff;
+    color: #007bff;
+    background-color: white;
+}
+
+.user-account {
+    position: relative; /* Giữ nguyên để dropdown có thể được định vị chính xác */
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none; /* Ẩn dropdown mặc định */
+    position: absolute; /* Thay đổi vị trí thành absolute để nó xuất hiện dưới user-account */
+    right: 0; /* Căn phải so với user-account */
+    top: 100%; /* Đặt nó ngay dưới phần tử cha */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 200px;
+    height: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0; /* Loại bỏ padding mặc định */
+    z-index: 1000; /* Đảm bảo dropdown xuất hiện trên các phần tử khác */
+}
+
+
+.show {
+    display: block; /* Hiển thị dropdown khi có class "show" */
+}

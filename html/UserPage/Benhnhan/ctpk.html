@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="shortcut icon" type="image/png" href="../../../upload/image/homepage/logo-min.png" />
+    <link rel="stylesheet" href="../../../css/UserPage/layout/style.css">
+    <link rel="stylesheet" href="../../../fontawesome-free-6.4.2-web/css/all.min.css">
+    <link rel="shortcut icon" type="image/png" href="../../../upload/image/homepage/logo-min.png" />
+
+    <style>
+        .container_CTP {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: auto;
+        }
+        .header_CTP {
+            background-color: #007BFF;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-header {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .row div {
+            flex: 1;
+            padding: 5px;
+        }
+        .label {
+            font-weight: bold;
+            color: #555;
+        }
+        .table-container {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        .note {
+            display: flex;
+            padding: 10px 0;
+            border-top: 1px solid #e0e0e0;
+        }
+        .note div {
+            flex: 1;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <a href="../layout/index.html">
+                    <img src="../../../upload/image/homepage/logo.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="nav">
+                <div class="nav-top">
+                    <div class="nav-search">
+                        <form action="" method="get">
+                            <input type="text" name="input-search" placeholder="Nhập tên bác sĩ hoặc chuyên khoa,...">
+                            <input type="submit" name="btn-search" value="Tìm kiếm">
+                        </form>
+                    </div>
+                    <div class="nav-contact">
+                        <button class="btn-dkk" onclick="location.href='../dk.html'">ĐĂNG KÝ KHÁM</button>
+                        <button class="btn-tv">TƯ VẤN: 1800 0000</button>
+                        <a href="../dn.html"><button class="btn-signin"><i class="fa-solid fa-user fa-2xl"></i></button></a>
+                    </div>
+                </div>
+                <div class="nav-bottom">
+                    <ul>
+                        <li><a href="../gioithieu.html">GIỚI THIỆU</a></li>
+                        <li><a href="../chuyenkhoa.html">CHUYÊN KHOA</a></li>
+                        <li><a href="../DoctorPage.html">BÁC SĨ</a></li>
+                        <li><a href="../Contact.html">LIÊN HỆ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            
+            <div class="main-content">
+                <div class="container_CTP">
+                    <div class="header_CTP">Chi tiết phiếu khám</div>
+            
+                    <!-- Thông tin bệnh nhân -->
+                    <div class="section">
+                        <div class="section-header">Thông tin bệnh nhân</div>
+                        <div class="row">
+                            <div class="label">Tên:</div>
+                            <div>Lê Thành Đạt</div>
+                        </div>
+                        <div class="row">
+                            <div class="label">Ngày sinh:</div>
+                            <div>03/04/2003</div>
+                        </div>
+                        <div class="row">
+                            <div class="label">SDT:</div>
+                            <div>0934841644</div>
+                        </div>
+                        <div class="row">
+                            <div class="label">Giới tính:</div>
+                            <div>Nam</div>
+                        </div>
+                        <div class="row">
+                            <div class="label">Email:</div>
+                            <div>datsieucapvippro001@gmail.com</div>
+                        </div>
+                        <div class="row">
+                            <div class="label">BHYT:</div>
+                            <div>12345</div>
+                        </div>
+                        <div class="row">
+                            <div class="label">Địa Chỉ:</div>
+                            <div>Phú Yên</div>
+                        </div>
+                        <div class="row">
+                            <div class="label">CCCD:</div>
+                            <div>123456789</div>
+                        </div>
+                    </div>
+            
+                    <!-- Thông tin khám -->
+                    <div class="section">
+                        <div class="section-header">Thông tin khám</div>
+                        <div class="row">
+                            <div class="label">Chuyên khoa:</div>
+                            <div>Tai Mũi Họng</div>
+                        </div>
+                        <div class="row">
+                            <div class="label">Bác sĩ:</div>
+                            <div>Lê Thành Đạt</div>
+                        </div>
+                        <div class="row">
+                            <div class="label">Ngày khám:</div>
+                            <div>10/10/2023</div>
+                        </div>
+                        <div class="row">
+                            <div class="label">Triệu chứng:</div>
+                            <div>Đau họng, sốt</div>
+                        </div>
+                        <div class="row">
+                            <div class="label">Chuẩn đoán:</div>
+                            <div>Viêm họng</div>
+                        </div>
+                    </div>
+            
+                    <!-- Thông tin thuốc -->
+                    <div class="table-container">
+                        <div class="section-header">Thông tin thuốc</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Tên thuốc</th>
+                                    <th>Số lượng</th>
+                                    <th>Liều lượng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Paracetamol</td>
+                                    <td>10 viên</td>
+                                    <td>Ngày 2 viên sau ăn</td>
+                                </tr>
+                                <!-- Thêm các dòng thuốc nếu có -->
+                            </tbody>
+                        </table>
+                    </div>
+            
+                    <!-- Ghi chú -->
+                    <div class="note">
+                        <div class="label">Ghi chú: Uống thuốc đúng giờ và tái khám sau 1 tuần nếu không thuyên giảm.</div>
+                    </div>
+            
+                    <!-- Nút quay lại -->
+                    <div class="button-container">
+                        <button onclick="location.href='pk.html'">Quay lại</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Thông tin bệnh viện -->
+                <div class="footer-info">
+                    <h4>Bệnh viện Tương Lai</h4>
+                    <p><img src="../../../upload/image/homepage/footer/dc.jpg" alt="">Địa chỉ: Nguyễn Văn Bảo, Phường 4, Gò Vấp, Thành phố HCM</p>
+                    <p><img src="../../../upload/image/homepage/footer/dt.png" alt="">Điện thoại: (01) 23456789</p>
+                    <p><img src="../../../upload/image/homepage/footer/em.png" alt="">Email: futurevision@benhvien.com</p>
+
+                </div>
+                <!-- Giờ khám -->
+                <div class="footer-hours">
+                    <h4>Giờ khám</h4>
+                    <p>Thứ Hai - Thứ Sáu: 8:00 - 17:00</p>
+                    <p>Thứ Bảy: 8:00 - 12:00</p>
+                    <p>Chủ Nhật: Nghỉ</p>
+                </div>
+
+                <!-- Liên kết nhanh -->
+                <div class="footer-links">
+                    <h4>Liên kết nhanh</h4>
+                    <ul>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Chuyên khoa</a></li>
+                        <li><a href="#">Bác sĩ</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Mạng xã hội -->
+                <div class="footer-social">
+                    <h4>Kết nối với chúng tôi</h4>
+                    <a href="#"><img src="../../../upload/image/homepage/footer/fb.png" alt="Facebook"></a>
+                    <a href="#"><img src="../../../upload/image/homepage/footer/tw.png" alt="Twitter"></a>
+                    <a href="#"><img src="../../../upload/image/homepage/footer/ig.png" alt="Instagram"></a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bệnh viện Tương Lai. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

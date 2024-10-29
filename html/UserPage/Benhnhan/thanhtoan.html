@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <title>
+        Payment Methods
+    </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .container h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .payment-method {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .payment-method .icon {
+            width: 40px;
+            height: 40px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+        }
+
+        .payment-method span {
+            flex-grow: 1;
+            text-align: left;
+            margin-left: 10px;
+        }
+
+        .payment-method i {
+            color: #007bff;
+        }
+
+        .back-button {
+            background-color: #e0e0e0;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <h2>
+            Chọn Phương thức thanh toán
+        </h2>
+        <div class="payment-method">
+            <div class="icon">
+            </div>
+            <span>
+                Thanh toán quét mã
+                <span style="color: red;">
+                    VNPAYQR
+                </span>
+            </span>
+        </div>
+        <div class="payment-method">
+            <div class="icon">
+            </div>
+            <span>
+                Thẻ ATM và tài khoản ngân hàng
+            </span>
+            <i class="fas fa-chevron-down">
+            </i>
+        </div>
+        <div class="payment-method">
+            <div class="icon">
+            </div>
+            <span>
+                Thẻ thanh toán quốc tế
+            </span>
+            <i class="fas fa-chevron-down">
+            </i>
+        </div>
+        <div class="payment-method">
+            <div class="icon">
+            </div>
+            <span>
+                Ví điện tử VNPAY
+            </span>
+        </div>
+        <button class="back-button" onclick="location.href='../dk.html'">
+            QUAY LẠI
+        </button>
+    </div>
+</body>
+
+</html>

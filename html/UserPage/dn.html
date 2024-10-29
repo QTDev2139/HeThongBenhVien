@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="../../css/StaffPage/datlee/styles.css">
+    <link rel="shortcut icon" type="image/png" href="../../upload/image/homepage/logo-min.png" />
+
+</head>
+<body>
+    <div class="body_DN">
+        <div class="container_header">
+            <a href="../UserPage/index.html">
+                <img src="../../upload/image/homepage/logo-min.png" alt="Logo" class="logo">
+            </a>
+        </div>
+        <div class="container_DN">
+            <div class="DN">
+                <h2>Đăng Nhập</h2>
+            </div>
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <b>*</b>
+                    <input type="text" id="username" name="username" placeholder="Mã số hoặc số điện thoại" required>
+                </div>
+                <div class="form-group">
+                    <b>*</b>
+                    <input type="password" id="password" name="password" placeholder="Mật khẩu" required>
+                </div>
+                <div class="form-group">
+                    <a href="#" onclick="showForgotPasswordMessage()">Quên mật khẩu?</a>
+                </div>
+                <div class="button-container">
+                    <button type="submit" class="button">Đăng Nhập</button>
+                </div>
+            </form>
+            <a href="Benhnhan/benhnhan.html">Đăng nhập với vai trò bệnh nhân</a>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Xử lý đăng nhập tại đây (gửi yêu cầu tới server hoặc kiểm tra thông tin)
+            console.log(`Username: ${username}, Password: ${password}`);
+
+            // Chuyển hướng hoặc thông báo thành công có thể được thực hiện ở đây
+            alert('Đăng nhập thành công!');
+            window.location.href = "../StaffPage/Nhuan/Homepage.html";
+
+        }
+
+        function showForgotPasswordMessage() {
+            alert('Bạn phải đến quầy tiếp tân để yêu cầu lấy mật khẩu hoặc thay đổi mật khẩu.');
+        }
+    </script>
+</body>
+</html>
