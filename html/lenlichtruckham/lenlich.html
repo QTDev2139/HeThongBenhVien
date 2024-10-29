@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lên lịch trực khám</title>
+    <!-- <link rel="stylesheet" href="../../css/Nhuan/ChangeSchedule.css"> -->
+    <link rel="stylesheet" href="../../fontawesome-free-6.4.2-web/css/all.min.css">
+    <link rel="shortcut icon" type="image/png" href="../../upload/image/homepage/logo-min.png" />
+    <style>
+       * {
+    margin: 0;
+    padding: 0;
+    background-color: #d6ebf5;
+    /* box-sizing: border-box; */
+    /* font-family: 'Courier New', Courier, monospace; */
+}
+
+
+.container {
+    width: 90%;
+    /* border: 1px solid grey; */
+    margin: 10px auto;
+    height: 500px;
+}
+
+.header {
+    height: 80px;
+    padding: 0 5%;
+    background-color: white;
+    /* box-shadow: 10px 1px grey; */
+}
+
+.header .logo {
+    width: 60%;
+    float: left;
+    height: 80px;
+    background-color: white;
+}
+
+.header .logo a {
+    padding: 0;
+    margin: 0;
+}
+
+.header .logo img {
+    height: 80px;
+    width: auto;
+    margin: 0;
+    padding: 0;
+
+}
+
+.header .nav-header {
+    width: 40%;
+    float: right;
+    background-color: white;
+    height: 80px;
+}
+
+.header .nav-header ul {
+    clear: both;
+    height: 80px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
+.header .nav-header ul li {
+    display: inline;
+    background-color: white;
+    margin: 0 18px;
+    line-height: 80px;
+}
+
+.header .nav-header ul li a {
+    text-decoration: none;
+    color:  #007bff;
+    background-color: white;
+}
+
+.header .nav-header ul li a i {
+    background-color: white;
+}
+
+.user-account img{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.nav {
+    width: 20%;
+    float: left;
+    min-height: 100px;
+    /* background-color: white; */
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.nav ul li {
+    margin: 3px 0;
+    
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+    background-color: white;
+    display: block;
+    line-height: 50px;
+    height: 50px;
+    padding:  10px 20px;
+    /* border: 1px solid #007bff; */
+    border-radius: 20px;
+}
+
+.nav ul li a i {
+    margin-right: 15px;
+}
+
+.content {
+    width: 78%;
+    float: right;
+    background-color: white;
+    min-height: 500px;
+    margin: 2px 0 0 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.content h2 {
+    text-align: center;
+    background-color: white;
+    height: 50px;
+    line-height: 50px;
+}
+
+
+.content form select, .content form, .content form label {
+    background-color: white;
+}
+
+.content form select {
+    width: 120px;
+    height: 30px;
+}
+
+.schedule {
+    margin: 10px 0;
+    background-color: white;
+}
+
+.schedule table {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.schedule table caption {
+    font-size: 20px;
+    height: 40px;
+    line-height: 40px;
+    background-color: white;
+    font-weight: bolder;
+}
+
+.schedule table tr, .schedule table tr td {
+    background-color: white;
+    border: 1px solid grey;
+    text-align: center;
+}
+
+.schedule table tr:first-child {
+    font-weight: bolder;
+}
+
+
+.schedule table tr td:first-child a {
+    background-color: white;
+}
+
+.schedule table tr td:last-child button{
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+    border: 1px solid rgb(41, 126, 255);
+    border-radius: 20px;
+    background-color: #007bff;
+    color: white;
+}
+
+.schedule table tr td:last-child button:hover {
+    background-color: white;
+    color: #007bff;
+}
+
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.modal-content h1 {
+    background-color: white;
+    text-align: center;
+}
+
+.modal-content form {
+    margin: 10px auto;
+    width: 90%;
+}
+
+.modal-content form label {
+    font-size: 20px;
+    
+}
+
+.modal-content form textarea {
+    background-color: white;
+    margin: 10px 0;
+}
+
+.modal-content form input[type="submit"] {
+    width: 100px;
+    height: 30px;
+    border: none;
+    background-color: rgb(0, 140, 255);
+    color: white;
+    border-radius: 11px;
+    margin: 0 140px;
+}
+
+.modal-content form input[type="submit"]:hover {
+    background-color: white;
+    color:  rgb(0, 140, 255);
+    border: 1px solid rgb(0, 140, 255);
+}
+
+.close {
+    width: 100%;
+    height: 40px;
+    background-color: white;
+}
+
+.close-btn {
+    color: red;
+    float: right;
+    font-size: 34px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: white;
+    float: right;
+
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/* phần sửa */
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #007BFF;
+    background-color: #007BFF;
+    color: white;
+}
+.header1 {
+    background-color: #FF6F61;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 300px;
+}
+
+table {
+    width: 60%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #D3D3D3;
+}
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #A9A9A9;
+}
+.action-links {
+    color: #1E90FF;
+    text-decoration: none;
+}
+
+    </style>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="../../upload/image/homepage/logo.jpg" alt="">
+        </div>
+        <div class="nav-header">
+            <ul>
+                <li><a href="../../html/Nhuan/Homepage.html">
+                        <i class="fa-solid fa-house fa-lg"></i> Trang chủ
+                    </a></li>
+                <li><a href="">
+                        <i class="fa-regular fa-bell fa-lg"></i> Thông báo
+                    </a></li>
+                <li class="user-account"><a href="">
+                        <img src="../../upload/image/homepage-staff/avater-user.jpg" alt=""> Đặng Bảo Chánh <i
+                            class="fa-solid fa-caret-down"></i>
+                    </a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="nav">
+            <ul>
+                <li><a href="../../html/quanlinguoidung/trangchuquanli.html"><i class="fa-solid fa-house fa-lg"></i>Trang chủ</a></li>
+                <li><a href="../../html/Duyetyeucaudoilich/duyetyeucaudoilich.html"><i class="fa-solid fa-calendar-days fa-lg"></i> Duyệt yêu cầu đổi lịch</a></li>
+                <li><a href="../../html/lenlichtruckham/lenlichtruckham.html"><i class="fa-regular fa-calendar-days fa-lg"></i> Lên lịch trực khám</a></li>
+                <li><a href="../../html/quanlinguoidung/nguoidung.html"><i class="fa-solid fa-book-medical fa-lg"></i> Quản lí người dùng -Sửa/Xóa</a></li>
+                <li><a href="../../html/quanlinguoidung/themmoinguoidung.html"><i class="fa-solid fa-pen-to-square fa-lg"></i> Quản lí người dùng - Thêm</a></li>
+                <li><a href="../../html/quanlinguoidung/phanquyenchonguoidung.html"><i class="fa-solid fa-pen-to-square fa-lg"></i> Phân quyền người dùng</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            
+            <div class="header1">
+                Lên lịch trực khám
+            </div>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th rowspan="2">Ca 1</th>
+                        <th>Phòng</th>
+                        <th>Ngày</th>
+                        <th>Thời gian</th>
+                        <th>Bác sĩ , điều dưỡng</th>
+                        <th rowspan="2"><a href="#" onclick="them()">Thêm</a></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select>
+                                <option value="N3.1">N3.1</option>
+                                <option value="N3.2">N3.2</option>
+                                <option value="N3.3">N3.3</option>
+                                <option value="N3.4" selected>N3.4</option>
+                            </select>
+                        </td>
+                        <td>12/09/2024</td>
+                        <td>6h-9h</td>
+                        <td>
+                            <select>
+                                <option value="BS. Lê A" selected>BS. Lê A</option>
+                                <option value="BS. Nguyễn B">BS. Nguyễn B</option>
+                                <option value="BS. Trần C">BS. Trần C</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <script>
+                function them() {
+                    alert("Thêm lịch thành công!");
+                }
+            </script>
+    </div>
+</body>
+
+</html>
