@@ -1,0 +1,135 @@
+/* Định dạng cho phần thông tin liên hệ */
+.contact-info {
+    text-align: left; /* Căn trái nội dung bên trong */
+    padding: 20px; /* Thêm padding cho đẹp */
+    border: 1px solid #ccc; /* Thêm đường viền để phân biệt */
+    border-radius: 8px; /* Bo góc cho khung thông tin liên hệ */
+    flex: 1 1 45%; /* Thiết lập chiếm khoảng 45% chiều rộng */
+    min-width: 300px; /* Giới hạn chiều rộng tối thiểu để giữ tính linh hoạt */
+}
+
+/* Định dạng cho phần bản đồ */
+.map {
+    text-align: center; /* Căn giữa nội dung trong bản đồ */
+    flex: 1 1 45%; /* Thiết lập chiếm khoảng 45% chiều rộng */
+    min-width: 300px; /* Giới hạn chiều rộng tối thiểu để giữ tính linh hoạt */
+}
+
+.map iframe {
+    width: 100%; /* Đảm bảo bản đồ chiếm toàn bộ chiều rộng */
+    height: 300px; /* Chiều cao cố định cho bản đồ */
+    border-radius: 8px; /* Bo góc cho bản đồ */
+    border: none; /* Không có viền cho bản đồ */
+}
+
+/* Định dạng cho form gửi phản hồi */
+.contact-form {
+    margin-top: 20px; /* Thêm khoảng cách phía trên cho form */
+    flex: 1 1 100%; /* Đảm bảo form chiếm toàn bộ chiều rộng */
+}
+
+.contact-form h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Các định dạng cho trường nhập liệu */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    padding: 10px; /* Thêm padding cho ô nhập liệu */
+    margin-bottom: 15px; /* Khoảng cách giữa các ô */
+    border: 1px solid #ccc; /* Đường viền nhẹ */
+    border-radius: 4px; /* Bo góc cho ô nhập liệu */
+    font-size: 16px; /* Kích thước chữ */
+}
+
+/* Định dạng cho ô điện thoại */
+.contact-form input[type="tel"] {
+    /* Thay đổi kiểu dáng hoặc kích thước nếu cần */
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    max-width: 100%; /* Giới hạn chiều rộng tối đa */
+}
+
+/* Định dạng cho các nhãn */
+.contact-form label {
+    font-size: 14px; /* Kích thước chữ cho nhãn */
+    margin-bottom: 5px; /* Khoảng cách giữa nhãn và ô nhập liệu */
+    color: #555; /* Màu chữ cho nhãn */
+}
+
+/* Định dạng cho nút gửi */
+.contact-form button {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    padding: 10px; /* Padding cho nút */
+    font-size: 16px; /* Kích thước chữ cho nút */
+    color: #fff; /* Màu chữ */
+    background-color: #007bff; /* Màu nền */
+    border: none; /* Không có đường viền */
+    border-radius: 4px; /* Bo góc cho nút */
+    cursor: pointer; /* Con trỏ khi di chuột lên nút */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+}
+
+.contact-form button:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+}
+/* Định dạng cho phần nội dung chính */
+.main-content {
+    width: 100%; /* Sử dụng toàn bộ chiều rộng của container */
+    max-width: 1200px; /* Giới hạn chiều rộng tối đa để tránh trải dài quá mức trên màn hình lớn */
+    margin: 20px auto; /* Tạo khoảng cách ở trên và dưới, căn giữa */
+    padding: 20px; /* Thêm padding để tạo không gian cho nội dung */
+    background-color: #f9f9f9; /* Thêm nền để phân biệt nội dung */
+    border-radius: 8px; /* Bo góc cho phần nội dung */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ nhẹ để tạo chiều sâu */
+}
+
+/* Định dạng cho container body */
+.container-body {
+    display: flex; /* Thiết lập flexbox */
+    flex-wrap: wrap; /* Cho phép phần tử con xuống hàng nếu không đủ không gian */
+    justify-content: space-between; /* Căn giữa các phần tử */
+    align-items: flex-start; /* Căn đầu cho phần trên */
+    gap: 20px; /* Khoảng cách giữa các phần */
+    padding: 20px; /* Padding cho container */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .contact-info h1, .contact-form h2 {
+        font-size: 22px; /* Kích thước chữ nhỏ hơn trên màn hình nhỏ */
+    }
+
+    .contact-form button {
+        font-size: 14px; /* Kích thước chữ nút nhỏ hơn trên màn hình nhỏ */
+    }
+
+    /* Khi màn hình nhỏ, phần bản đồ và thông tin liên hệ sẽ chiếm toàn bộ chiều rộng */
+    .contact-info,
+    .map {
+        flex: 1 1 100%; /* Mỗi phần sẽ chiếm toàn bộ chiều rộng */
+    }
+}
+
+/* Responsive layout cho màn hình lớn */
+@media (min-width: 768px) {
+    .contact-info {
+        text-align: left; /* Căn trái cho phần thông tin liên hệ */
+    }
+}
