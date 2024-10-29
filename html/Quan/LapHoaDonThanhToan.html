@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bacsi/Dieuduong</title>
+    <link rel="stylesheet" href="../../css/Nhuan/ViewSchedule.css" />
+    <link
+      rel="stylesheet"
+      href="../../fontawesome-free-6.4.2-web/css/all.min.css"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../../upload/image/homepage/logo-min.png"
+    />
+    <style>
+        * {
+            --textPrimary: #27519e;
+            --white: #fff;
+            --secondColor: #333;
+            --bgColor: #f0f9fd;
+            --bgColor2: #6ac0e7;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .frm-prescription {
+            width: 700px;
+            margin: auto;
+            padding: 20px;
+        }
+        .prescription-title {
+            text-align: center;
+            padding: 20px;
+            color: var(--textPrimary);
+            font-weight: 700;
+            font-size: 20px;
+        }
+        .patient-info .info-item {
+            padding: 5px 20px;
+        }
+        .info-title, .diagnosis-table, .section-title {
+            font-size: 18px;
+            padding: 10px 0;
+        }
+        .frm-prescription table {
+            border: none;
+            border-spacing: 0;
+        }
+        .diagnosis-table, .treatment-table {
+            padding: 0 20px;
+        }
+        .diagnosis-table th, .treatment-table th {
+            font-size: 16px;
+            background-color: var(--bgColor);
+            text-align: center;
+            padding: 5px 10px;
+        }
+        .diagnosis-table td, .treatment-table td {
+            padding: 5px 10px;
+        }
+        .total-amount {
+            padding: 10px 0;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .instructions-section {
+            display: flex;
+        }
+        .instructions-label {
+            font-size: 18px;
+        }
+        .submit-button {
+            display: block;
+            margin: 40px auto;
+            background-color: var(--textPrimary);
+            color: var(--white);
+            font-weight: 700;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all ease-in 0.1s;
+        }
+        .submit-button a {
+            text-decoration: none;
+            color: var(--white);
+            background-color: var(--textPrimary);
+        }
+        /* .submit-button:hover, .submit-button a:hover {
+            background-color: var(--bgColor2);
+        } */
+        /*  */
+        .nav a {
+          display: flex !important;
+          align-items: center !important;
+        }
+        .content {
+            border-top: 1px solid #717171;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="logo">
+        <img src="../../upload/image/homepage/logo.jpg" alt="" />
+      </div>
+      <div class="nav-header">
+        <ul>
+          <li>
+            <a href="../../html/Nhuan/Homepage.html">
+              <i class="fa-solid fa-house fa-lg"></i> Trang chủ
+            </a>
+          </li>
+          <li>
+            <a href=""> <i class="fa-regular fa-bell fa-lg"></i> Thông báo </a>
+          </li>
+          <li class="user-account">
+            <a href="">
+              <img
+                src="../../upload/image/homepage-staff/avater-user.jpg"
+                alt=""
+              />
+              Trần Việt Quân <i class="fa-solid fa-caret-down"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="nav">
+        <ul>
+          <li>
+            <a href="../../html/Quan/Homepage.html"
+              ><i class="fa-solid fa-house fa-lg"></i>Trang chủ</a
+            >
+          </li>
+          <li>
+            <a href="../../html/Quan/QuanLyThuoc.html"
+              ><i class="fa-solid fa-calendar-days fa-lg"></i>Quản lý thuốc</a
+            >
+          </li>
+          <li>
+            <a href="../../html/Quan/DanhSachDonThuoc.html"
+              ><i class="fa-regular fa-calendar-days fa-lg"></i>Lập hóa đơn
+              thanh toán thuốc</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <form action="#" class="frm-prescription">
+          <h3 class="prescription-title">ĐƠN THUỐC</h3>
+
+          <div class="patient-info">
+            <h4 class="info-title">Thông tin bệnh nhân:</h4>
+            <p class="info-item">
+              Họ và tên: <span class="info-value">Nguyễn Văn A</span>
+            </p>
+            <p class="info-item">
+              Mã hồ sơ: <span class="info-value">HS123456</span>
+            </p>
+            <p class="info-item">
+              Địa chỉ:
+              <span class="info-value"
+                >123 Đường ABC, Quận 1, TP. Hồ Chí Minh</span
+              >
+            </p>
+            <p class="info-item">
+              Hình thức thanh toán:
+              <span class="info-value">
+                <select name="" id="">
+                  <option value="Tiền Mặt">Tiền Mặt</option>
+                  <option value="Online">Online</option>
+                </select>
+              </span>
+            </p>
+            <p class="info-item">
+              Mã BHYT: <span class="info-value">BHYT78910</span>
+            </p>
+          </div>
+
+          <div class="diagnosis-section">
+            <h4 class="section-title">Chuẩn đoán:</h4>
+            <table class="diagnosis-table" border="1">
+              <tr>
+                <th>Mã</th>
+                <th>Chuẩn đoán</th>
+                <th>Kết luận</th>
+              </tr>
+              <tr>
+                <td>CD01</td>
+                <td>Viêm họng cấp</td>
+                <td>Cần nghỉ ngơi và uống thuốc</td>
+              </tr>
+              <tr>
+                <td>CD02</td>
+                <td>Viêm amidan</td>
+                <td>Điều trị bằng kháng sinh trong 7 ngày</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="treatment-section">
+            <h4 class="section-title">Thuốc điều trị:</h4>
+            <table class="treatment-table" border="1">
+              <tr>
+                <th>Mã thuốc</th>
+                <th>Tên thuốc</th>
+                <th>Số lượng</th>
+                <th>Đơn giá</th>
+                <th>Giảm BHYT</th>
+                <th>Thành tiền</th>
+              </tr>
+              <tr>
+                <td>MT01</td>
+                <td>Paracetamol</td>
+                <td>10 viên</td>
+                <td>2,000 VND</td>
+                <td>50%</td>
+                <td>10,000 VND</td>
+              </tr>
+              <tr>
+                <td>MT02</td>
+                <td>Amoxicillin</td>
+                <td>15 viên</td>
+                <td>3,000 VND</td>
+                <td>50%</td>
+                <td>22,500 VND</td>
+              </tr>
+            </table>
+            <p class="total-amount">
+              Tổng tiền: <span class="total-value">32,500 VND</span>
+            </p>
+          </div>
+
+          <div class="instructions-section">
+            <label for="instructions" class="instructions-label"
+              >Lời dặn:</label
+            >
+            <textarea
+              id="instructions"
+              class="instructions-textarea"
+              rows="5"
+              cols="70"
+            ></textarea>
+          </div>
+
+          <div class="action-section">
+            <button class="submit-button"><a href="./InDonThuoc.html">Lập Đơn Thuốc</a></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

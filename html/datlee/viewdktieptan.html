@@ -1,108 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng ký khám bệnh</title>
-    <link rel="stylesheet" href="/css/datlee/styles.css">
+    <title>Bacsi/Dieiduong</title>
+    <link rel="stylesheet" href="/css/datlee/ttdk.css">
+    <link rel="stylesheet" href="../../fontawesome-free-6.4.2-web/css/all.min.css">
     <link rel="shortcut icon" type="image/png" href="../../upload/image/homepage/logo-min.png" />
-
+    <style>
+        
+    </style>
 </head>
+
 <body>
-    <div class="body">
-        <div class="container_header">
-            <a href="../layout/index.html">
-                <img src="../../upload/image/homepage/logo-min.png" alt="Logo" class="logo">
-            </a>
+    <div class="header">
+        <div class="logo">
+            <img src="../../upload/image/homepage/logo.jpg" alt="">
         </div>
-        <div class="container_DK">
-            <div class="blue">
-                <div class="yasuo">
-                    <h1>Đăng ký khám bệnh</h1>
+        <div class="nav-header">
+            <ul>
+                <li><a href="../../html/Nhuan/Homepage.html">
+                        <i class="fa-solid fa-house fa-lg"></i> Trang chủ
+                    </a></li>
+                <li><a href="">
+                        <i class="fa-regular fa-bell fa-lg"></i> Thông báo
+                    </a></li>
+                <li class="user-account"><a href="">
+                        <img src="../../upload/image/homepage-staff/avater-user.jpg" alt=""> Lê Thành Đạt <i
+                            class="fa-solid fa-caret-down"></i>
+                    </a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="nav">
+            <ul>
+                <li><a href="../../html/Nhuan/Homepage.html"><i class="fa-solid fa-house fa-lg"></i>Trang chủ</a></li>
+                <li><a href="#"><i class="fa-solid fa-calendar-days fa-lg"></i></a></li>
+                <li><a href="#"><i class="fa-regular fa-calendar-days fa-lg"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-book-medical fa-lg"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-pen-to-square fa-lg"></i></a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="body">
+                <div class="container_DK">
+                    <div class="blue">
+                        <div class="yasuo">
+                            <h1>Đăng ký khám bệnh</h1>
+                        </div>
+                        <form id="registration-form" onsubmit="submitForm(event)">
+                            <div class="form-group">
+                                <label for="sdt">SDT</label>
+                                <input type="text" id="sdt" name="SDT" value="0787750973" onblur="validateSDT()">
+                            </div>
+                            <span class="error" id="error-sdt">SDT phải theo dạng 07 hoặc 03 xxxxxxxx.</span>
+
+                            <div class="form-group">
+                                <label for="ten">Tên</label>
+                                <input type="text" id="ten" name="Tên" disabled onblur="validateName()">
+                            </div>
+                            <span class="error" id="error-ten">Tên phải là dạng chữ.</span>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="Email" disabled onblur="validateEmail()">
+                            </div>
+                            <span class="error" id="error-email">Email phải có dạng @gmail.com.</span>
+
+                            <div class="form-group">
+                                <label for="ngaysinh">Ngày sinh</label>
+                                <input type="date" id="ngaysinh" name="Ngày Sinh" disabled onblur="validateBirthday()">
+                            </div>
+                            <span class="error" id="error-ngaysinh">Vui lòng nhập ngày sinh.</span>
+
+                            <div class="form-group">
+                                <label for="gioitinh">Giới tính</label>
+                                <select id="gioitinh" name="Giới tính" disabled onchange="validateGender()">
+                                    <option value="">Chọn giới tính</option>
+                                    <option value="Nam">Nam</option>
+                                    <option value="Nữ">Nữ</option>
+                                    <option value="Khác">Khác</option>
+                                </select>
+                            </div>
+                            <span class="error" id="error-gioitinh">Vui lòng chọn giới tính.</span>
+
+                            <div class="form-group">
+                                <label for="cccd">CCCD</label>
+                                <input type="text" id="cccd" name="CCCD" disabled onblur="validateCCCD()">
+                            </div>
+                            <span class="error" id="error-cccd">CCCD phải là số.</span>
+
+                            <div class="form-group">
+                                <label for="bhyt">BHYT</label>
+                                <input type="text" id="bhyt" name="BHYT" value="0" disabled onblur="validateBHYT()">
+                            </div>
+                            <span class="error" id="error-bhyt">BHYT phải là số.</span>
+
+                            <div class="form-group">
+                                <label for="chuyenkhoa">Chuyên khoa</label>
+                                <select id="chuyenkhoa" name="Chuyên khoa" disabled onchange="validateSpecialty()">
+                                    <option value="">Chọn chuyên khoa</option>
+                                    <option value="Tai Mũi Họng">Tai Mũi Họng</option>
+                                </select>
+                            </div>
+                            <span class="error" id="error-chuyenkhoa">Vui lòng chọn chuyên khoa.</span>
+
+                            <div class="form-group">
+                                <label for="bacsi">Bác sĩ</label>
+                                <select id="bacsi" name="Bác sĩ" disabled onchange="validateDoctor()">
+                                    <option value="">Chọn bác sĩ</option>
+                                    <option value="Lê Thành Đạt">Lê Thành Đạt</option>
+                                </select>
+                            </div>
+                            <span class="error" id="error-bacsi">Vui lòng chọn bác sĩ.</span>
+
+                            <div class="form-group">
+                                <label for="ngaykham">Ngày khám</label>
+                                <select id="ngaykham" name="Ngày Khám" disabled onchange="validateAppointmentDate()">
+                                    <option value="">Chọn ngày khám</option>
+                                    <option value="30/11/2024">30/11/2024</option>
+                                </select>
+                            </div>
+                            <span class="error" id="error-ngaykham">Vui lòng chọn ngày khám.</span>
+
+                            <div class="button-container">
+                                <button type="submit" class="button">Đăng ký</button>
+                            </div>
+                        </form>
+                        <div class="success" id="success-message">Đăng ký thành công!</div> <!-- Thông báo thành công -->
+                    </div>
                 </div>
-                <form id="registration-form" onsubmit="submitForm(event)">
-                    <div class="form-group">
-                        <label for="sdt">SDT</label>
-                        <input type="text" id="sdt" name="SDT" value="0787750973" onblur="validateSDT()">
-                    </div>
-                    <span class="error" id="error-sdt">SDT phải theo dạng 07 hoặc 03 xxxxxxxx.</span>
-
-                    <div class="form-group">
-                        <label for="ten">Tên</label>
-                        <input type="text" id="ten" name="Tên" disabled onblur="validateName()">
-                    </div>
-                    <span class="error" id="error-ten">Tên phải là dạng chữ.</span>
-
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="Email" disabled onblur="validateEmail()">
-                    </div>
-                    <span class="error" id="error-email">Email phải có dạng @gmail.com.</span>
-
-                    <div class="form-group">
-                        <label for="ngaysinh">Ngày sinh</label>
-                        <input type="date" id="ngaysinh" name="Ngày Sinh" disabled onblur="validateBirthday()">
-                    </div>
-                    <span class="error" id="error-ngaysinh">Vui lòng nhập ngày sinh.</span>
-
-                    <div class="form-group">
-                        <label for="gioitinh">Giới tính</label>
-                        <select id="gioitinh" name="Giới tính" disabled onchange="validateGender()">
-                            <option value="">Chọn giới tính</option>
-                            <option value="Nam">Nam</option>
-                            <option value="Nữ">Nữ</option>
-                            <option value="Khác">Khác</option>
-                        </select>
-                    </div>
-                    <span class="error" id="error-gioitinh">Vui lòng chọn giới tính.</span>
-
-                    <div class="form-group">
-                        <label for="cccd">CCCD</label>
-                        <input type="text" id="cccd" name="CCCD" disabled onblur="validateCCCD()">
-                    </div>
-                    <span class="error" id="error-cccd">CCCD phải là số.</span>
-
-                    <div class="form-group">
-                        <label for="bhyt">BHYT</label>
-                        <input type="text" id="bhyt" name="BHYT" value="0" disabled onblur="validateBHYT()">
-                    </div>
-                    <span class="error" id="error-bhyt">BHYT phải là số.</span>
-
-                    <div class="form-group">
-                        <label for="chuyenkhoa">Chuyên khoa</label>
-                        <select id="chuyenkhoa" name="Chuyên khoa" disabled onchange="validateSpecialty()">
-                            <option value="">Chọn chuyên khoa</option>
-                            <option value="Tai Mũi Họng">Tai Mũi Họng</option>
-                        </select>
-                    </div>
-                    <span class="error" id="error-chuyenkhoa">Vui lòng chọn chuyên khoa.</span>
-
-                    <div class="form-group">
-                        <label for="bacsi">Bác sĩ</label>
-                        <select id="bacsi" name="Bác sĩ" disabled onchange="validateDoctor()">
-                            <option value="">Chọn bác sĩ</option>
-                            <option value="Lê Thành Đạt">Lê Thành Đạt</option>
-                        </select>
-                    </div>
-                    <span class="error" id="error-bacsi">Vui lòng chọn bác sĩ.</span>
-
-                    <div class="form-group">
-                        <label for="ngaykham">Ngày khám</label>
-                        <select id="ngaykham" name="Ngày Khám" disabled onchange="validateAppointmentDate()">
-                            <option value="">Chọn ngày khám</option>
-                            <option value="30/11/2024">30/11/2024</option>
-                        </select>
-                    </div>
-                    <span class="error" id="error-ngaykham">Vui lòng chọn ngày khám.</span>
-
-                    <div class="button-container">
-                        <button type="submit" class="button">Đăng ký</button>
-                    </div>
-                </form>
-                <div class="success" id="success-message">Đăng ký thành công!</div> <!-- Thông báo thành công -->
             </div>
         </div>
     </div>
+
     <script>
         function validateSDT() {
             const sdt = document.getElementById('sdt').value;
@@ -255,27 +288,12 @@
 
             if (errors.every(error => error === 'none')) {
                 // Tất cả các trường đều hợp lệ
-                const formData = {
-                    sdt: document.getElementById('sdt').value,
-                    ten: document.getElementById('ten').value,
-                    email: document.getElementById('email').value,
-                    ngaysinh: document.getElementById('ngaysinh').value,
-                    gioitinh: document.getElementById('gioitinh').value,
-                    cccd: document.getElementById('cccd').value,
-                    bhyt: document.getElementById('bhyt').value,
-                    chuyenkhoa: document.getElementById('chuyenkhoa').value,
-                    bacsi: document.getElementById('bacsi').value,
-                    ngaykham: document.getElementById('ngaykham').value
-                };
-
-                // Chuyển hướng tới trang tt.html và truyền thông tin qua URL
-                const queryString = new URLSearchParams(formData).toString();
-                window.location.href = `tt.html?${queryString}`;
+                document.getElementById('success-message').style.display = 'block'; // Hiển thị thông báo thành công
             } else {
                 document.getElementById('success-message').style.display = 'none'; // Ẩn thông báo nếu có lỗi
             }
         }
-
     </script>
 </body>
+
 </html>
