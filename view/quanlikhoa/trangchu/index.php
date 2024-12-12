@@ -14,7 +14,6 @@
     }
     $_SESSION['idnv'] = $manv;
 ?>
-
 <div class="main-content container">
     <div class="row">
         <div class="info col-md-7 col-11 px-3 m-3 border border-info rounded">

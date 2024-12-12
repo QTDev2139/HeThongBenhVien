@@ -1,32 +1,10 @@
-<?php
-error_reporting(0);
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duyệt yêu cầu đổi lịch</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <style>
-        .title {
-            text-align: center;
-            font-size: 30px;
-            padding-bottom: 20px;
-        }
-    </style>
-</head>
 
-<body>
-    <div class="container">
         <div class="content">
-            <div class="title">Duyệt yêu cầu đổi lịch</div>
+            <div class="title" style="text-align: center;
+            font-size: 30px;
+            padding-bottom: 20px;">Duyệt yêu cầu đổi lịch</div>
             <?php
-            include_once("controller/csanpham.php");
+            include_once("controller/cquanli.php");
             $p = new cSanpham();
             $tblSP = $p->getNVYCDL($_REQUEST['mp']);
             $r = $tblSP->fetch_assoc();
@@ -46,7 +24,7 @@ error_reporting(0);
                 $lydo = $_REQUEST['lydo'];
                 $p->updateTUCHOI($trangthai, $lydo, $maphieu);
                 echo '<script>alert("Cập nhật yêu cầu duyệt thành công")</script>';
-                echo '<script>window.location.href = "index.php?quanlikhoa=duyetyeucau&mp=' . $maphieu . '"</script>';
+                echo '<script>window.location.href = "index-staff.php?page-sub=duyetyeucau&mp='.$maphieu.'"</script>';
                 //chỉ cập nhật trạng thái và lý do
             }
             if (isset($_REQUEST['dongy'])) {
@@ -61,7 +39,7 @@ error_reporting(0);
                 $p->upMNVCU($manhanvien, $camoi);
                 $p->upMNVMOI($mnvmoi, $cacu);
                 echo '<script>alert("Cập nhật yêu cầu duyệt thành công")</script>';
-                echo '<script>window.location.href = "index.php?quanlikhoa=duyetyeucau&mp=' . $maphieu . '"</script>';
+                echo '<script>window.location.href = "index-staff.php?page-sub=duyetyeucau&mp='.$maphieu.'"</script>';
             }
             ?>
             <table class="table table-success table-striped table-bordered border-primary table-hover">
@@ -118,9 +96,3 @@ error_reporting(0);
                 </form>
             </table>
         </div>
-
-       
-    </div>
-</body>
-
-</html>

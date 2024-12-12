@@ -17,7 +17,7 @@ class cNguoiDung{
             }
             if($_SESSION["dn"]==1){
                 echo "<script>alert('Đăng nhập thành công. Chào mừng Admin');</script>";
-                header("refresh:0.5; url='admin.php'");
+                header("refresh:0.5; url='index-staff.php'");
             } else if($_SESSION["dn"]==2){
                 echo "<script>alert('Đăng nhập thành công. Chào mừng Bác sĩ');</script>";
                 header("refresh:0.5; url='index-staff.php'");

@@ -18,6 +18,9 @@ error_reporting(0);
         <div class="content">
             <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center ">
                 <span>Danh Sách Người Dùng</span>
+                <button type="button" class="btn btn-outline-info" style="background-color: white;">
+    <a href="index-staff.php?page-sub=dangkinguoidung" style="color: inherit; text-decoration: none;">Thêm người dùng</a>
+</button>
             </div>
             <table class="table table-striped table table-hover table table-bordered border-primary">
                 <thead>
@@ -33,7 +36,7 @@ error_reporting(0);
                 </thead>
                 <tbody>
                     <?php
-                    include_once("controller/csanpham.php");
+                    include_once("controller/cquanli.php");
                     $p = new cSanpham();
                     $tblSP = $p->getALLND();
                     $dem = 1;
@@ -46,8 +49,8 @@ error_reporting(0);
                         echo "<td>" . $r['Diachi'] . "</td>";
                         echo "<td>" . $r['Chucvu'] . "</td>";
                         echo '<td>
-                        <button type="button" class="btn btn-outline-danger"><a href="index.php?admin=xoanguoidung&mand=' . $r['MaNV'] . '">Xóa</a></button>
-                        <button type="button" class="btn btn-outline-info"><a href="index.php?admin=suanguoidung&mand=' . $r['MaNV'] . '">Sửa</a></button>
+                        <button type="button" class="btn btn-outline-danger"><a href="index-staff.php?page-sub=xoanguoidung&mand=' . $r['MaNV'] . '">Xóa</a></button>
+                        <button type="button" class="btn btn-outline-info"><a href="index-staff.php?page-sub=suanguoidung&mand=' . $r['MaNV'] . '">Sửa</a></button>
                         </td>';
                         $dem++;
                         echo "</tr>";

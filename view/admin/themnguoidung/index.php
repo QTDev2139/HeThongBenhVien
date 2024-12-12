@@ -1,7 +1,7 @@
 <?php
-error_reporting(0);
 
-include_once("controller/csanpham.php");
+
+include_once("controller/cquanli.php");
 $p = new csanpham();
 $p1 = new csanpham();
 $p2 = new csanpham();
@@ -63,17 +63,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo $idr;
             echo $manv;
             if ($idr == 2) {
-                echo '<script>
-                                alert("Thêm thành công");
-                                window.location.href = "index.php?admin=themchuyenkhoabacsi&id=' . $manv . '"; 
-                              </script>';
+                echo '<script>alert("Sửa thành công")</script>';
+                echo '<script>window.location.href = "index-staff.php?page-sub=themchuyenkhoadieuduong&id=' . $manv . '"</script>';
             } elseif ($idr == 3) {
+                echo '<script>alert("Sửa thành công")</script>';
+                echo '<script>window.location.href = "index-staff.php?page-sub=themchuyenkhoabacsi&id=' . $manv . '"</script>';
+            } else {
                 echo '<script>
                                 alert("Thêm thành công");
-                                window.location.href = "index.php?admin=themchuyenkhoadieuduong&id=' . $manv . '"; 
+                                window.location.href = "index-staff.php?page-sub=quanli"; 
                               </script>';
-            } else {
-                echo '<script>alert("Thêm thành công")</script>';
+
             }
         }
     }

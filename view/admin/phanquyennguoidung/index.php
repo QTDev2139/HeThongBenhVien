@@ -35,7 +35,7 @@ error_reporting(0);
                 </thead>
                 <tbody>
                     <?php
-                    include_once("controller/csanpham.php");
+                    include_once("controller/cquanli.php");
                     $p = new cSanpham();
                     $tblSP = $p->getALLND();
                     $dem = 1;
@@ -47,7 +47,7 @@ error_reporting(0);
                         echo "<td>" . $r['Email'] . "</td>";
                         echo "<td>" . $r['Chucvu'] . "</td>";
                         echo '<td>
-                        <button type="button" class="btn btn-outline-info"><a href="index.php?admin=phanquyen&mand=' . $r['iduser'] . '">Sửa</a></button>
+                        <button type="button" class="btn btn-outline-info"><a href="index-staff.php?page-sub=phanquyen&mand=' . $r['iduser'] . '">Sửa</a></button>
                         </td>';
                         $dem++;
                         echo "</tr>";

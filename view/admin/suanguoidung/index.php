@@ -74,7 +74,7 @@ error_reporting(0);
     <div class="container">
         <div class="content">
             <?php
-            include_once("controller/csanpham.php");
+            include_once("controller/cquanli.php");
             $p = new csanpham();
             $tblSP = $p->getND($_REQUEST['mand']);
             $r = $tblSP->fetch_assoc();

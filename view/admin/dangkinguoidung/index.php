@@ -69,7 +69,7 @@ error_reporting(0);
                             <select class="form-select" aria-label="Default select example" name='vTro'>
                                 <option selected value="">Chọn chức vụ</option>
                                 <?php
-                                include_once("controller/csanpham.php");
+                                include_once("controller/cquanli.php");
                                 $p = new csanpham();
                                 $tblSP = $p->getAllROLE();
                                 while ($r = $tblSP->fetch_assoc()) {
@@ -119,7 +119,7 @@ if (isset($_REQUEST['dKi'])) {
         }
         echo '<script>
                         alert("Thêm thành công");
-                        window.location.href = "index.php?admin=themnguoidung&id=' . $stt . '"; 
+                        window.location.href = "index-staff.php?page-sub=themnguoidung&id='.$stt.'"; 
                       </script>';
     }
 }

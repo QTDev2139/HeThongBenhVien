@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-include_once("controller/csanpham.php");
+include_once("controller/cquanli.php");
 $p = new csanpham();
 //$r =$tblSP -> fetch_assoc(); 
 if (isset($_REQUEST['sua'])) {

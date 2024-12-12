@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-include_once("controller/csanpham.php");
+include_once("controller/cquanli.php");
 $p = new csanpham();
 $tblSP = $p->getND($_REQUEST['mand']);
 $tblSP1 = $p->getAllROLE();
@@ -16,7 +16,7 @@ if (isset($_REQUEST['sua'])) {
     $p->suaROLEUSER($idrole, $iduser);
     $p->suaROLEND($iduser, $chucvu);
     echo '<script>alert("Sửa thành công")</script>';
-    echo '<script>window.location.href = "index.php?admin=phanquyen&mand=' . $iduser . '"</script>'; // điều hướng về trang...
+    echo '<script>window.location.href = "index-staff.php?page-sub=phanquyen&mand=' . $iduser . '"</script>'; // điều hướng về trang...
 }
 ?>
 <!DOCTYPE html>

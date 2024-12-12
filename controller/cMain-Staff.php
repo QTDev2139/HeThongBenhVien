@@ -6,11 +6,15 @@ class CMain_Staff
         switch ($role) {
             case 1:
                 echo '<li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index-staff.php?page-sub=trangchu">Trang chủ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index-staff.php?page-sub=quanly">Quản lý</a>
-                        </li>';
+                        <a class="nav-link" aria-current="page" href="index-staff.php?page-sub=trangchu">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index-staff.php?page-sub=quanli">Quản lý người dùng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index-staff.php?page-sub=phanquyennguoidung">Phân quyền người dùng</a>
+                    </li>';
+                    
                 break;
             case 2:
                 echo '<li class="nav-item">
@@ -114,7 +118,7 @@ class CMain_Staff
                             <a class="nav-link" aria-current="page" href="index-staff.php?page-sub=lenlichtruckham">Lên lịch trực khám</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index-staff.php?page-sub=lenlichtruckhamdieuduong">Lên lịch trực kh</a>
+                            <a class="nav-link" aria-current="page" href="index-staff.php?page-sub=duyetyeucaudoilich">Duyệt yêu cầu đổi lịch</a>
                         </li>
                         ';
                 break;

@@ -13,7 +13,7 @@ error_reporting(0);
 </head>
 <body class="bg-gray-100 p-4">
 <?php
-                 include_once("controller/csanpham.php");
+                 include_once("controller/cquanli.php");
                  $p=new csanpham();
                  $tblSP1 = $p -> getAllPHONG();
                  $tblSP2 = $p -> getAllDD();
@@ -88,7 +88,9 @@ $buoi ='';// giá trị buổi
     <div class="max-w-7xl mx-auto">
         <div class="flex justify-between items-center mb-6">
             <button id="prevWeek" class="bg-blue-500 text-white px-4 py-2 rounded">Tuần trước</button>
+            <a href="index-staff.php?page-sub=lenlichtruckham" style="text-decoration: none;">BÁC SĨ</a>
             <h1 class="text-2xl font-bold">LỊCH DÀNH CHO ĐIỀU DƯỠNG</h1>
+            <a href="index-staff.php?page-sub=lenlichtruckhamdieuduong" style="text-decoration: none;">ĐIỀU DƯỠNG</a>
             <button id="nextWeek" class="bg-blue-500 text-white px-4 py-2 rounded">Tuần sau</button>
         </div>
         <div class="grid grid-cols-7 gap-4 text-center">
